@@ -50,6 +50,8 @@ class RomanToInteger {
 
 
     fun romanToInt(s: String): Int{
+
+
         romanHashMap.put("I", 1)
         romanHashMap.put("V", 5)
         romanHashMap.put("X", 10)
@@ -67,10 +69,14 @@ class RomanToInteger {
         romanHashMap.put("CD", 400)
         romanHashMap.put("CM", 900)
 
+
+
         if(s.length >= 1 && s.length <= 15){
+            var sum = 0
+
             for(key in romanHashMap.keys){
                 if (s == "$key"){
-
+                    sum = romanHashMap.get(key)!!
                 }
             }
 
@@ -87,9 +93,13 @@ fun main(args: Array<String>) {
 
     val romanInput = readLine()!!
 
-    if(romanInput != romanInput.capitalize()){
-        println("Wrong Input")
-    }else{
-        romanToInteger.romanToInt(romanInput)
+    romanInput.forEach {
+        if(romanInput != romanInput.capitalize()){
+            println("Wrong Input")
+        }else{
+            romanToInteger.romanToInt(it.toString())
+        }
     }
+
+
 }
