@@ -1,4 +1,4 @@
-# LeetCode-Challanges
-Compilation of LeetCode coding challanges
+# LeetCode-Challenges
+Compilation of LeetCode coding challenges
 
-These coding challanges are based from LeetCode website, and all the solution were made originally by me
+These coding challenges are based from LeetCode website, and all the solution were made originally by me
