@@ -45,44 +45,35 @@
 
 
 class RomanToInteger {
-    var romanHashMap : HashMap<String, Int>
-        = HashMap<String, Int>()
-
-
     fun romanToInt(s: String): Int{
+        var romanHashMap : MutableMap<Char, Int>
+                = HashMap()
 
+        romanHashMap['I'] = 1
+        romanHashMap['V']= 5
+        romanHashMap['X']= 10
+        romanHashMap['L']= 50
+        romanHashMap['C']= 100
+        romanHashMap['D']= 500
+        romanHashMap['M']= 1000
 
-        romanHashMap.put("I", 1)
-        romanHashMap.put("V", 5)
-        romanHashMap.put("X", 10)
-        romanHashMap.put("L", 50)
-        romanHashMap.put("C", 100)
-        romanHashMap.put("D", 500)
-        romanHashMap.put("M", 1000)
+        val l = s.length
 
-        romanHashMap.put("IV", 4)
-        romanHashMap.put("IX", 90)
-
-        romanHashMap.put("XL", 40)
-        romanHashMap.put("XC", 90)
-
-        romanHashMap.put("CD", 400)
-        romanHashMap.put("CM", 900)
+        var res = romanHashMap[s[l-1]]!!
 
 
 
-        if(s.length >= 1 && s.length <= 15){
-            var sum = 0
-
-            for(key in romanHashMap.keys){
-                if (s == "$key"){
-                    sum = romanHashMap.get(key)!!
-                }
+        for(i in l - 2 downTo  0){
+            if(romanHashMap[s[i]]!! >= romanHashMap[s[i+1]]!!){
+                res += romanHashMap[s[i]]!!
             }
-
+            else{
+                res -= romanHashMap[s[i]]!!
+            }
         }
+        return res
 
-        return 0
+
     }
 }
 
@@ -93,13 +84,6 @@ fun main(args: Array<String>) {
 
     val romanInput = readLine()!!
 
-    romanInput.forEach {
-        if(romanInput != romanInput.capitalize()){
-            println("Wrong Input")
-        }else{
-            romanToInteger.romanToInt(it.toString())
-        }
-    }
-
+    println("Result : " + romanToInteger.romanToInt(romanInput))
 
 }
