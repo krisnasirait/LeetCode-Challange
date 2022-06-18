@@ -31,9 +31,28 @@
 class Solution {
     fun twoSum(nums: IntArray, target: Int): IntArray {
 
+        val l = nums.size
+
+
+
+        for(i in 0 until l){
+            for (a in 0 until l){
+                if(nums[i] + nums[a] == target){
+
+                }
+            }
+        }
+
     }
 }
 
 fun main() {
+    val solution = Solution()
+
+    val arrayNum: IntArray = intArrayOf(2, 7, 11, 15)
+    val target = 18
+
+    print("Result : ")
+    solution.twoSum(arrayNum, target)
 
 }
