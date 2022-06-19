@@ -35,13 +35,15 @@ class Solution {
 
 
 
-        for(i in 0 until l){
-            for (a in 0 until l){
-                if(nums[i] + nums[a] == target){
-
+        for(b in 0 until l){
+            for (c in b + 1 until l){
+                if(nums[b] + nums[c] == target){
+                    return intArrayOf(b, c)
                 }
             }
         }
+
+        throw java.lang.IllegalArgumentException("No solution")
 
     }
 }
@@ -52,7 +54,7 @@ fun main() {
     val arrayNum: IntArray = intArrayOf(2, 7, 11, 15)
     val target = 18
 
-    print("Result : ")
-    solution.twoSum(arrayNum, target)
+    print("Result : " + solution.twoSum(arrayNum, target).toList())
+
 
 }
