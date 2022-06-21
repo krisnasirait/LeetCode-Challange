@@ -21,19 +21,20 @@
 
 class ListNode(var `val`: Int) {
     var next: ListNode? = null
+
+
+
 }
 
 class AddTwoNumbers {
     fun addTwoNum(l1: ListNode?, l2: ListNode?): ListNode? {
 
-        return l2
     }
 
 
 }
 
 fun main() {
-    val addTwoNumbers = AddTwoNumbers()
     val node1 = ListNode(12)
     val node2 = ListNode(11)
     val node3 = ListNode(10)
